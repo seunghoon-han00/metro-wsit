@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2022 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2026 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -29,6 +29,7 @@ import java.util.logging.Level;
 import jakarta.transaction.SystemException;
 
 import javax.transaction.xa.Xid;
+import jakarta.xml.bind.DatatypeConverter;
 import jakarta.xml.ws.EndpointReference;
 import jakarta.xml.ws.WebServiceContext;
 import jakarta.xml.ws.WebServiceException;
@@ -106,7 +107,7 @@ public abstract class BaseRegistration<T extends EndpointReference,K,P> implemen
         BaseRegisterResponseType<T,P> registerResponseType = newRegisterResponseType();
         String coordinatorHostAndPort = getCoordinatorAddress();
         String txId = TransactionIdHelper.getInstance().xid2wsatid(xid);
-        String branchQual = new String(xid.getBranchQualifier());
+        String branchQual = DatatypeConverter.printHexBinary(xid.getBranchQualifier());
         EndpointReferenceBuilder<T> builder = getEndpointReferenceBuilder();
         T endpointReference =
                 builder.address(coordinatorHostAndPort).referenceParameter(

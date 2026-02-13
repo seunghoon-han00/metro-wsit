@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 1997, 2022 Oracle and/or its affiliates. All rights reserved.
+ * Copyright (c) 1997, 2026 Oracle and/or its affiliates. All rights reserved.
  *
  * This program and the accompanying materials are made available under the
  * terms of the Eclipse Distribution License v. 1.0, which is available at
@@ -26,6 +26,7 @@ import com.sun.xml.ws.tx.at.common.CoordinatorIF;
 import com.sun.xml.ws.tx.at.common.WSATVersion;
 
 import javax.transaction.xa.Xid;
+import jakarta.xml.bind.DatatypeConverter;
 import jakarta.xml.ws.EndpointReference;
 import jakarta.xml.ws.WebServiceContext;
 
@@ -154,7 +155,7 @@ public class Coordinator<T> implements CoordinatorIF<T> {
     Xid getXid() {
         Xid xid= getWSATHelper().getXidFromWebServiceContextHeaderList(context);
         String bqual = getWSATHelper().getBQualFromWebServiceContextHeaderList(context);
-        return new XidImpl(xid.getFormatId(), xid.getGlobalTransactionId(), bqual.getBytes());
+        return new XidImpl(xid.getFormatId(), xid.getGlobalTransactionId(), DatatypeConverter.parseHexBinary(bqual));
     }
 
     boolean isDebugEnabled() {

@@ -31,6 +31,7 @@ import java.util.logging.Level;
 
 import javax.transaction.xa.XAException;
 import javax.transaction.xa.Xid;
+import jakarta.xml.bind.DatatypeConverter;
 import jakarta.xml.soap.SOAPException;
 import jakarta.xml.ws.EndpointReference;
 import jakarta.xml.ws.WebServiceContext;
@@ -365,7 +366,8 @@ public class WSATHelper<T> {
             return participantPort;
         }
         try {
-            participantPort = getParticipantPort(epr, xid, new String(wsatXAResource.getXid().getBranchQualifier()));
+            String branchQual = DatatypeConverter.printHexBinary(wsatXAResource.getXid().getBranchQualifier());
+            participantPort = getParticipantPort(epr, xid, branchQual);
         } catch (SOAPException e) {
             if (isDebugEnabled()) LOGGER.info(LocalizationMessages.WSAT_4601_CANNOT_CREATE_DURABLE_PARTICIPANT_PORT(xid));
             e.printStackTrace();
