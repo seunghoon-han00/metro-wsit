@@ -18,7 +18,7 @@
         <groupId>org.glassfish.metro</groupId>
         <artifactId>metro-bom-ext</artifactId>
         <relativePath>boms/bom-ext/pom.xml</relativePath>
-        <version>4.0.6-SNAPSHOT</version>
+        <version>4.0.8-SNAPSHOT</version>
     </parent>
 
     <artifactId>metro-project</artifactId>
@@ -102,11 +102,11 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>build-helper-maven-plugin</artifactId>
-                    <version>3.6.1</version>
+                    <version>3.6.2</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-enforcer-plugin</artifactId>
-                    <version>3.6.2</version>
+                    <version>3.6.3</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-source-plugin</artifactId>
@@ -115,7 +115,7 @@
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>buildnumber-maven-plugin</artifactId>
-                    <version>3.3.0</version>
+                    <version>3.3.1</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
@@ -128,7 +128,7 @@
                 <plugin>
                     <groupId>org.apache.felix</groupId>
                     <artifactId>maven-bundle-plugin</artifactId>
-                    <version>6.0.0</version>
+                    <version>6.2.0</version>
                     <configuration>
                         <instructions>
                             <_noextraheaders>true</_noextraheaders>
@@ -137,11 +137,11 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.15.0</version>
+                    <version>3.16.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.10.0</version>
+                    <version>3.11.0</version>
                 </plugin>
                 <plugin>
                     <groupId>com.sun.istack</groupId>
@@ -150,7 +150,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.5.0</version>
+                    <version>3.5.1</version>
                 </plugin>
                 <plugin>
                     <groupId>com.google.code.maven-replacer-plugin</groupId>
@@ -159,15 +159,15 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.4.0</version>
+                    <version>3.5.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-shade-plugin</artifactId>
-                    <version>3.6.1</version>
+                    <version>3.6.2</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.5.4</version>
+                    <version>3.6.0</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-antrun-plugin</artifactId>
@@ -220,7 +220,7 @@
                 <plugin>
                     <groupId>org.owasp</groupId>
                     <artifactId>dependency-check-maven</artifactId>
-                    <version>12.2.0</version>
+                    <version>13.0.0</version>
                     <configuration>
                         <failBuildOnCVSS>7</failBuildOnCVSS>
                         <skipProvidedScope>true</skipProvidedScope>
@@ -510,14 +510,14 @@
         <plugins>
             <plugin>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>3.5.4</version>
+                <version>3.6.0</version>
                 <configuration>
                     <aggregate>true</aggregate>
                 </configuration>
             </plugin>
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
                 <version>${spotbugs.version}</version>
                 <configuration>
                     <skip>${spotbugs.skip}</skip>
@@ -576,7 +576,7 @@
                 </property>
             </activation>
             <properties>
-                <jacoco.version>0.8.14</jacoco.version>
+                <jacoco.version>0.8.15</jacoco.version>
                 <jacoco.skip>false</jacoco.skip>
             </properties>
             <build>
@@ -670,7 +670,7 @@
         <spotbugs.exclude />
         <spotbugs.skip>false</spotbugs.skip>
         <spotbugs.threshold>High</spotbugs.threshold>
-        <spotbugs.version>4.7.3.6</spotbugs.version>
+        <spotbugs.version>4.10.4.1</spotbugs.version>
         <findsecbugs.version>1.14.0</findsecbugs.version>
 
         <istack.plugins.version>4.1.2</istack.plugins.version>

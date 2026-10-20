@@ -17,7 +17,7 @@
     <parent>
         <groupId>org.glassfish.metro</groupId>
         <artifactId>bundles</artifactId>
-        <version>4.0.6-SNAPSHOT</version>
+        <version>4.0.8-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
@@ -97,12 +97,6 @@
         <dependency>
             <groupId>com.sun.xml.ws</groupId>
             <artifactId>rt</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.glassfish.gmbal</groupId>
-                    <artifactId>gmbal-api-only</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
 
        <dependency>
@@ -112,7 +106,7 @@
 
         <dependency>
             <groupId>org.glassfish.gmbal</groupId>
-            <artifactId>gmbal</artifactId>
+            <artifactId>gmbal-api-only</artifactId>
         </dependency>
 
         <dependency>

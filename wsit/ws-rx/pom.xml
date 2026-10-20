@@ -17,15 +17,13 @@
     <parent>
         <groupId>org.glassfish.metro</groupId>
         <artifactId>metro-project</artifactId>
-        <version>4.0.6-SNAPSHOT</version>
+        <version>4.0.8-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
 
     <artifactId>wsrx-project</artifactId>
     <packaging>pom</packaging>
     <name>WS-RX Project</name>
-
-    <!-- prerequisites -->
 
     <modules>
         <module>wsmc-api</module>
@@ -35,7 +33,4 @@
         <module>wsrm-impl</module>
         <module>wsrx-testing</module>
     </modules>
-
-    <!--dependencies></dependencies-->
-    <!--properties></properties-->
 </project>
